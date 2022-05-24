@@ -12,7 +12,7 @@ class Node{
         std::string value;
         std::vector<Node*> children;
     public:
-        Node(const std::string& v);
+        Node(const std::string& s);
         ~Node();
         inline std::string getValue() const{
             return this->value;
@@ -33,9 +33,22 @@ class Node{
         inline bool operator!=(const Node& node2)const{
             return !((*this)==node2);
         }
-        inline size_t size(){
-            return value.size();
+        inline bool operator==(const std::string& str)const{
+            return this->value == str;
         }
+        inline bool operator!=(const std::string& str)const{
+            return !((*this)==str);
+        }
+        inline size_t size(){
+            return this->value.size();
+        }
+        inline char at(const size_t& n){
+            return this->value.at(n);
+        }
+        inline size_t length(){
+            return this->value.size();
+        }
+        
 
         friend std::ostream& operator<<(std::ostream& output, const Node& node);
 

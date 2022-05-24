@@ -2,11 +2,11 @@
 using namespace ariel;
 
 
-Level_order_iter::Level_order_iter(Node *first):CustomIterator(first), q(){
+Level_order_iter::Level_order_iter(Node *first):CustomIterator(first){
 
 }
 CustomIterator& Level_order_iter::operator++(){
-    for(auto node: this->curr->getChildren()){
+    for(auto *node: this->curr->getChildren()){
         this->q.push(node);
     }
     if(this->q.empty()){

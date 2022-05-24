@@ -7,7 +7,7 @@ ostream& ariel::operator<<(ostream& output, const Node& node){
     output<<node.getValue();
     return output;
 }
-Node::Node(const string& s):value(s), children(){
+Node::Node(const string& s):value(s){
 
 }
 Node::~Node(){}

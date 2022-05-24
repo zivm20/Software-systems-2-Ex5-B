@@ -13,8 +13,8 @@ namespace ariel{
             
         public:
             CustomIterator(Node *first);
-            inline Node& operator*()const{
-                return *(this->curr);
+            inline std::string operator*()const{
+                return (this->curr->getValue());
             }
             inline Node* operator->(){
                 return this->curr;
